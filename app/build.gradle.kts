@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.tech.skyz"
+    namespace = "com.tech.dvtweatherapp"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.tech.skyz"
+        applicationId = "com.tech.dvtweatherapp"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

@@ -1,4 +1,4 @@
-package com.tech.skyz
+package com.tech.dvtweatherapp
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.tech.skyz.ui.theme
+package com.tech.dvtweatherapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
