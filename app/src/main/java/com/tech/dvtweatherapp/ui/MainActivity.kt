@@ -1,4 +1,4 @@
-package com.tech.dvtweatherapp
+package com.tech.dvtweatherapp.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
