@@ -19,5 +19,6 @@ data class FavouriteWeather(
     val lon: Double?,
     val icon: String?,
     val description: String?,
+    val mainDescription: String?,
     var isFavouriteWeather: Boolean = false
 )

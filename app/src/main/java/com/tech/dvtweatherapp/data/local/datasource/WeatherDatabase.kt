@@ -12,7 +12,7 @@ import com.tech.dvtweatherapp.data.local.model.Weather
 
 @Database(
     entities = [Weather::class, Forecast::class, FavouriteWeather::class],
-    version = 1
+    version = 2
 
 )
 @TypeConverters(Converters::class)

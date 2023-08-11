@@ -12,11 +12,17 @@ import android.provider.Settings
 import android.provider.Settings.SettingNotFoundException
 import android.text.TextUtils
 import androidx.appcompat.app.AlertDialog
+import androidx.compose.ui.graphics.Color
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.FragmentActivity
 import com.tech.dvtweatherapp.R
 import com.tech.dvtweatherapp.data.local.datasource.SharedPreferences
+import com.tech.dvtweatherapp.ui.theme.CloudyBlue200
+import com.tech.dvtweatherapp.ui.theme.RainyBlue200
+import com.tech.dvtweatherapp.ui.theme.SunnyBlue200
+import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -50,17 +56,6 @@ internal class Util {
             return dateTime
         }
 
-/*
-        fun getDateLatestUpdated(date: Date?): String? {
-            val cal = Calendar.getInstance()
-            cal.time = date
-            val threeHourBack = cal.time
-            val mSDF = SimpleDateFormat(
-                "yyyy-MM-dd HH:mm:ss",
-                Locale.getDefault()
-            )
-            return mSDF.format(threeHourBack)
-        }*/
 
         fun getCurrentDayOfTheWeek(): String {
             val sdf = SimpleDateFormat("EEEE")
@@ -198,60 +193,59 @@ internal class Util {
             }
         }
 
-        fun getWeatherIconDrawable(context: Context, weatherIcon: String?): Drawable? {
-            val weatherDrawable: Drawable? = when (weatherIcon) {
-                "01d", "01n" -> ResourcesCompat.getDrawable(
+        fun getWeatherIconDrawable(context: Context, mainDescription: String?): Drawable? {
+            val weatherDrawable: Drawable? = when (mainDescription) {
+                "01d", "01n", "02d", "02n", "03d", "03n", "04d", "04n" -> ResourcesCompat.getDrawable(
                     context.resources,
-                    R.drawable.ic_weather_clear_sky,
+                    R.mipmap.ic_clear,
                     null
                 )
-                "02d", "02n" -> ResourcesCompat.getDrawable(
+
+                "09d", "09n", "10d", "10n", "11d", "11n" -> ResourcesCompat.getDrawable(
                     context.resources,
-                    R.drawable.ic_weather_few_clouds,
+                    R.mipmap.ic_rain,
                     null
                 )
-                "03d", "03n" -> ResourcesCompat.getDrawable(
-                    context.resources,
-                    R.drawable.ic_weather_scatterrd_clouds,
-                    null
-                )
-                "04d", "04n" -> ResourcesCompat.getDrawable(
-                    context.resources,
-                    R.drawable.ic_weather_broken_clouds,
-                    null
-                )
-                "09d", "09n" -> ResourcesCompat.getDrawable(
-                    context.resources,
-                    R.drawable.ic_weather_shower_rain,
-                    null
-                )
-                "10d", "10n" -> ResourcesCompat.getDrawable(
-                    context.resources,
-                    R.drawable.ic_weather_rain,
-                    null
-                )
-                "11d", "11n" -> ResourcesCompat.getDrawable(
-                    context.resources,
-                    R.drawable.ic_weather_thunderstorm,
-                    null
-                )
-                "13d", "13n" -> ResourcesCompat.getDrawable(
-                    context.resources,
-                    R.drawable.ic_weather_snow,
-                    null
-                )
-                "50d", "50n" -> ResourcesCompat.getDrawable(
-                    context.resources,
-                    R.drawable.ic_weather_mist,
-                    null
-                )
+
                 else -> ResourcesCompat.getDrawable(
                     context.resources,
-                    R.drawable.ic_weather_clear_sky,
+                    R.mipmap.ic_partlysunny,
                     null
                 )
             }
             return weatherDrawable
+        }
+
+        fun getWeatherBackgroundDrawable(context: Context, mainDescription: String?): Drawable? {
+            val weatherDrawable: Drawable? = when (mainDescription) {
+                "Clouds" -> ResourcesCompat.getDrawable(
+                    context.resources,
+                    R.drawable.sea_cloudy,
+                    null
+                )
+
+                "Rains" -> ResourcesCompat.getDrawable(
+                    context.resources,
+                    R.drawable.sea_rainy,
+                    null
+                )
+
+                else -> ResourcesCompat.getDrawable(
+                    context.resources,
+                    R.drawable.sea_sunnypng,
+                    null
+                )
+            }
+            return weatherDrawable
+        }
+
+        fun getWeatherBackgroundColor(mainDescription: String?): Color {
+            val weatherColor: Color = when (mainDescription) {
+                "Clouds" -> CloudyBlue200
+                "Rains" -> RainyBlue200
+                else -> SunnyBlue200
+            }
+            return weatherColor
         }
 
         fun getFavouriteDrawable(context: Context, status: Boolean?): Drawable? {
@@ -261,6 +255,7 @@ internal class Util {
                     R.drawable.ic_favorite_black_24dp,
                     null
                 )
+
                 else -> ResourcesCompat.getDrawable(
                     context.resources,
                     R.drawable.ic_favorite_border_black_24dp,

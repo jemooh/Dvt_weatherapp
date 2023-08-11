@@ -1,5 +1,6 @@
 package com.tech.dvtweatherapp.di
 
+
 import android.content.Context
 import androidx.room.Room
 import com.tech.dvtweatherapp.data.local.datasource.SharedPreferences
@@ -7,9 +8,12 @@ import com.tech.dvtweatherapp.data.local.datasource.WeatherDatabase
 import com.tech.dvtweatherapp.data.remote.api.WeatherApiService
 import com.tech.dvtweatherapp.data.repository.WeatherRepository
 import com.tech.dvtweatherapp.data.repository.WeatherRepositoryImpl
+import com.tech.dvtweatherapp.ui.viewmodel.FavouriteWeatherViewModel
+import com.tech.dvtweatherapp.ui.viewmodel.WeatherViewModel
 import com.tech.dvtweatherapp.utils.Constants
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
@@ -52,6 +56,13 @@ val appModule = module {
         )
     }
 
+    viewModel {
+        WeatherViewModel(weatherRepository = get())
+    }
+
+    viewModel {
+        FavouriteWeatherViewModel(weatherRepository = get())
+    }
     single {
         androidApplication().getSharedPreferences("PREFERENCES", Context.MODE_PRIVATE)
     }
