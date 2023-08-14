@@ -26,7 +26,6 @@ fun DrawerContent(navController: NavHostController, drawerState: DrawerState) {
     ) {
 
         Spacer(modifier = Modifier.height(10.dp))
-        Divider(color = Color.LightGray)
         Spacer(modifier = Modifier.height(10.dp))
         NavigationDrawerItems(navController,drawerState)
         Spacer(modifier = Modifier.weight(1f))

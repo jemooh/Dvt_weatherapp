@@ -9,14 +9,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
-    primary = Yellow200,
-    primaryVariant = Yellow500,
+    primary = CloudyBlue200,
+    primaryVariant = CloudyBlue200,
     secondary = Color.White,
 )
 
 private val LightColorPalette = lightColors(
-    primary = Yellow200,
-    primaryVariant = Yellow500,
+    primary = CloudyBlue200,
+    primaryVariant = CloudyBlue200,
     secondary = Color.White,
 
     background = SunnyBlue200,

@@ -22,9 +22,8 @@ import com.google.android.gms.location.LocationServices
 import com.tech.dvtweatherapp.utils.Util.Companion.checkIfLocationPermissionIsEnabled
 import com.tech.dvtweatherapp.utils.Util.Companion.validateAndForceLocationSetting
 import com.tech.dvtweatherapp.data.local.datasource.SharedPreferences
-import com.tech.dvtweatherapp.ui.composable.BottomNavigationBar
-import com.tech.dvtweatherapp.ui.composable.Navigation
 import com.tech.dvtweatherapp.ui.composable.NavigationPage
+import com.tech.dvtweatherapp.ui.theme.WeatherAppTheme
 import com.tech.dvtweatherapp.ui.viewmodel.WeatherViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -42,10 +41,12 @@ class MainActivity : AppCompatActivity() {
 
     @Composable
     fun MainScreen() {
-        Surface(
-            modifier = Modifier.fillMaxSize()
-        ) {
-            NavigationPage()
+        WeatherAppTheme {
+            Surface(
+                modifier = Modifier.fillMaxSize()
+            ) {
+                NavigationPage()
+            }
         }
     }
 
