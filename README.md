@@ -13,6 +13,7 @@ Requirements
 * Technologies used
   * [Kotlin](https://kotlinlang.org/)
   * [Jetpack Compose](https://developer.android.com/jetpack/compose)
+  * [Jetpack Compose Material 3](https://developer.android.com/jetpack/androidx/releases/compose-material3)
   * [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
   * [Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)
   * [KOIN Dependency](https://insert-koin.io/)
