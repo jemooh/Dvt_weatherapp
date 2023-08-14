@@ -17,10 +17,10 @@ private val DarkColorPalette = darkColors(
 private val LightColorPalette = lightColors(
     primary = CloudyBlue200,
     primaryVariant = CloudyBlue200,
-    secondary = Color.White,
+    //secondary = Color.White,
 
-    background = SunnyBlue200,
-    surface = SunnyBlue200,
+    background = CloudyBlue200,
+    surface = CloudyBlue200,
     onPrimary = Color.White,
     onSecondary = Color.Black,
     onBackground = Color.White,

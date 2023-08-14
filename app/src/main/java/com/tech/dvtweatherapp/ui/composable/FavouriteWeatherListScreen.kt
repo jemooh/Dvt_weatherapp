@@ -38,7 +38,6 @@ fun FavouriteLocationWeather() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
-                .background(color = Color.White)
                 .fillMaxWidth()
                 .fillMaxHeight()
         ) {
@@ -90,7 +89,6 @@ fun FavouriteListItem(favouriteWeather: FavouriteWeather) {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center,
                     modifier = Modifier
-                        .background(color = Color.White)
                         .wrapContentWidth()
                         .wrapContentHeight()
                 ) {
@@ -126,7 +124,6 @@ fun FavouriteListItem(favouriteWeather: FavouriteWeather) {
                     horizontalAlignment = Alignment.Start,
                     verticalArrangement = Arrangement.Center,
                     modifier = Modifier
-                        .background(color = Color.White)
                         .padding(8.dp)
                         .wrapContentWidth()
                         .wrapContentHeight()

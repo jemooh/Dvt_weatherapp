@@ -197,19 +197,19 @@ internal class Util {
             val weatherDrawable: Drawable? = when (mainDescription) {
                 "Clouds" -> ResourcesCompat.getDrawable(
                     context.resources,
-                    R.mipmap.ic_partlysunny,
+                    R.drawable.ic_partlysunny_xxh,
                     null
                 )
 
                 "Rains" -> ResourcesCompat.getDrawable(
                     context.resources,
-                    R.mipmap.ic_rain,
+                    R.drawable.ic_rain_xxh,
                     null
                 )
 
                 else -> ResourcesCompat.getDrawable(
                     context.resources,
-                    R.mipmap.ic_clear,
+                    R.drawable.ic_clear_xxh,
                     null
                 )
             }

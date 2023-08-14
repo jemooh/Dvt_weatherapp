@@ -24,9 +24,6 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 import com.tech.dvtweatherapp.data.local.model.FavouriteWeather
 import com.tech.dvtweatherapp.data.local.model.Forecast
-import com.tech.dvtweatherapp.ui.theme.Yellow500
-import com.tech.dvtweatherapp.R
-import com.tech.dvtweatherapp.ui.theme.SunnyBlue200
 import com.tech.dvtweatherapp.ui.viewmodel.FavouriteWeatherViewModel
 import com.tech.dvtweatherapp.ui.viewmodel.WeatherViewModel
 import com.tech.dvtweatherapp.utils.Constants.DEGREE_CELSIUS_SYMBOL

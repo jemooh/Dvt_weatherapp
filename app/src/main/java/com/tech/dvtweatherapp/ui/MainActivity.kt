@@ -39,14 +39,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     @Composable
     fun MainScreen() {
         WeatherAppTheme {
-            Surface(
-                modifier = Modifier.fillMaxSize()
-            ) {
+            Scaffold(){
                 NavigationPage()
             }
+
         }
     }
 

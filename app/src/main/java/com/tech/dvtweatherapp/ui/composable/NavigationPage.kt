@@ -13,6 +13,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
@@ -21,6 +22,7 @@ import androidx.navigation.compose.rememberNavController
 import com.tech.dvtweatherapp.R
 import com.tech.dvtweatherapp.ui.composable.component.DrawerContent
 import com.tech.dvtweatherapp.ui.theme.CloudyBlue200
+import com.tech.dvtweatherapp.ui.theme.WeatherAppTheme
 import com.tech.dvtweatherapp.ui.viewmodel.FavouriteWeatherViewModel
 import com.tech.dvtweatherapp.ui.viewmodel.WeatherViewModel
 import com.tech.dvtweatherapp.utils.Util
@@ -40,61 +42,67 @@ fun NavigationPage() {
     val coroutineScope = rememberCoroutineScope()
     val navController = rememberNavController()
 
-    ModalNavigationDrawer(drawerContent = { DrawerContent(navController,drawerState) }, drawerState = drawerState) {
+    ModalNavigationDrawer(
+        drawerContent = { DrawerContent(navController, drawerState) },
+        drawerState = drawerState
+    ) {
+        Surface{
+            Scaffold(topBar = {
+                TopAppBar(
+                    title = {},
+                    backgroundColor = Util.getWeatherBackgroundColor(
+                        weather?.mainDescription
+                    ), contentColor = Color.White,
+                    elevation = 0.dp,
+                    navigationIcon = {
+                        IconButton(onClick = {
 
-        Scaffold(topBar = {
-            TopAppBar(
-                title = {},
-                backgroundColor = Util.getWeatherBackgroundColor(
-                    weather?.mainDescription
-                ),
-                elevation = 0.dp,
-                navigationIcon = {
-                IconButton(onClick = {
+                            if (drawerState.isClosed) {
+                                coroutineScope.launch {
+                                    drawerState.open()
+                                }
+                            } else {
+                                coroutineScope.launch {
+                                    drawerState.close()
+                                }
+                            }
 
-                    if(drawerState.isClosed){
-                        coroutineScope.launch {
-                            drawerState.open()
+                        }) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.baseline_menu_24),
+                                contentDescription = "Drawer Menu."
+                            )
                         }
-                    }else{
-                        coroutineScope.launch {
-                            drawerState.close()
+
+                    })
+            }) {
+
+                Box(
+                    modifier = Modifier
+                        .padding(it)
+                ) {
+
+
+                    NavHost(navController = navController, startDestination = "HomePage") {
+
+                        composable("HomePage") {
+                            CurrentLocationWeather()
                         }
+
+                        composable("FavouritePage") {
+                            FavouriteLocationWeather()
+                        }
+
+                        composable("MapPage") {
+                            FavouriteWeatherMapView()
+                        }
+
                     }
 
-                }) {
-                    Icon(Icons.Filled.Menu, contentDescription = "Drawer Menu.")
+
                 }
 
-            })
-        }) {
-
-            Box(modifier = Modifier
-                .padding(it)
-            ) {
-
-
-                NavHost(navController = navController, startDestination = "HomePage") {
-
-                    composable("HomePage") {
-                        CurrentLocationWeather()
-                    }
-
-                    composable("FavouritePage") {
-                        FavouriteLocationWeather()
-                    }
-
-                    composable("MapPage") {
-                        FavouriteWeatherMapView()
-                    }
-
-                }
-
-
-            }
 
         }
-
     }
-
-}
+}}
