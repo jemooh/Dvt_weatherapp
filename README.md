@@ -46,6 +46,6 @@ Requirements
 ### Weather app screenshots
 
 | <img src="current_weather.jpg" height="480">
-||  <img src="weather_favourite.jpg" height="480">
+||  <img src="favourite_weather.jpg" height="480">
 ||  <img src="menu.jpg" height="480">
 || <img src="map.jpg" height="480"> |
