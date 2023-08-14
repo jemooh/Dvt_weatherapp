@@ -116,7 +116,7 @@ fun FavouriteListItem(favouriteWeather: FavouriteWeather) {
                     painter = rememberDrawablePainter(
                         drawable = Util.getWeatherIconDrawable(
                             context = context,
-                            favouriteWeather.icon
+                            favouriteWeather.mainDescription
                         )
                     ),
                     contentDescription = null,

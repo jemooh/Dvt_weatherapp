@@ -24,6 +24,9 @@ import com.tech.dvtweatherapp.ui.viewmodel.WeatherViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+//import org.koin.android.ext.android.inject
+//import org.koin.androidx.viewmodel.ext.android.viewModel
+
 class MainActivity : AppCompatActivity() {
     private val sharedPreferences: SharedPreferences by inject()
     private val weatherViewModel: WeatherViewModel by viewModel()

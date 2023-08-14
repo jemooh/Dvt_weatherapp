@@ -195,13 +195,13 @@ internal class Util {
 
         fun getWeatherIconDrawable(context: Context, mainDescription: String?): Drawable? {
             val weatherDrawable: Drawable? = when (mainDescription) {
-                "01d", "01n", "02d", "02n", "03d", "03n", "04d", "04n" -> ResourcesCompat.getDrawable(
+                "Clouds" -> ResourcesCompat.getDrawable(
                     context.resources,
-                    R.mipmap.ic_clear,
+                    R.mipmap.ic_partlysunny,
                     null
                 )
 
-                "09d", "09n", "10d", "10n", "11d", "11n" -> ResourcesCompat.getDrawable(
+                "Rains" -> ResourcesCompat.getDrawable(
                     context.resources,
                     R.mipmap.ic_rain,
                     null
@@ -209,7 +209,7 @@ internal class Util {
 
                 else -> ResourcesCompat.getDrawable(
                     context.resources,
-                    R.mipmap.ic_partlysunny,
+                    R.mipmap.ic_clear,
                     null
                 )
             }

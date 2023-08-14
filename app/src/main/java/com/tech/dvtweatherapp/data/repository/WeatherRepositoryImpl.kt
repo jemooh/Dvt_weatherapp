@@ -75,7 +75,7 @@ internal class WeatherRepositoryImpl(
                             Util.getWeekDayFromUTC(listItem.dt),
                             listItem.dt,
                             listItem.main?.temp?.toInt(),
-                            listItem.weather?.get(0)?.icon
+                            listItem.weather?.get(0)?.main
                         )
                         forecastDao.insertAsync(forecast)
                     }

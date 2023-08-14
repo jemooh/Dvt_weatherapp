@@ -244,7 +244,7 @@ fun ForecastListItems(forecast: Forecast) {
             painter = rememberDrawablePainter(
                 drawable = getWeatherIconDrawable(
                     context = context,
-                    forecast.icon
+                    forecast.main
                 )
             ),
             contentDescription = null,

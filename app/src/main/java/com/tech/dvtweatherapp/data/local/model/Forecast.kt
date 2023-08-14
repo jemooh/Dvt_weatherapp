@@ -12,5 +12,5 @@ data class Forecast(
     val day: String = "",
     val dt: Int?,
     val temp: Int?,
-    val icon: String?
+    val main: String?
 )
