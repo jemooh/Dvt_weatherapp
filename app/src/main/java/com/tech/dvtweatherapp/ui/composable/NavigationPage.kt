@@ -1,11 +1,7 @@
 package com.tech.dvtweatherapp.ui.composable
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.*
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -14,15 +10,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.tech.dvtweatherapp.R
 import com.tech.dvtweatherapp.ui.composable.component.DrawerContent
-import com.tech.dvtweatherapp.ui.theme.CloudyBlue200
-import com.tech.dvtweatherapp.ui.theme.WeatherAppTheme
 import com.tech.dvtweatherapp.ui.viewmodel.FavouriteWeatherViewModel
 import com.tech.dvtweatherapp.ui.viewmodel.WeatherViewModel
 import com.tech.dvtweatherapp.utils.Util

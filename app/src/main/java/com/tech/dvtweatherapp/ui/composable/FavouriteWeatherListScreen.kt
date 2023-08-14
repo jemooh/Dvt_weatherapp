@@ -1,7 +1,6 @@
 package com.tech.dvtweatherapp.ui.composable
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -42,6 +41,7 @@ fun FavouriteLocationWeather() {
                 .fillMaxHeight()
         ) {
             Text(
+                color = Color.Black,
                 style = MaterialTheme.typography.body1,
                 modifier = Modifier.padding(16.dp),
                 textAlign = TextAlign.Center,
@@ -130,7 +130,7 @@ fun FavouriteListItem(favouriteWeather: FavouriteWeather) {
                 ) {
 
                     Text(
-                        text = favouriteWeather.temp.toString() + Constants.DEGREE_CELSIUS_SYMBOL,
+                        text = favouriteWeather.temp.toString() + Constants.DEGREE_SYMBOL,
                         style = MaterialTheme.typography.h4,
                         textAlign = TextAlign.Start
                     )

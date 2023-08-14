@@ -236,7 +236,7 @@ dependencies {
 
     // Testing
     // leak canary
-    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.7")
+    //debugImplementation("com.squareup.leakcanary:leakcanary-android:2.7")
 
     // UI Test - Compose
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")

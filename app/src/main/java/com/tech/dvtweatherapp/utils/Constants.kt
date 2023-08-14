@@ -11,7 +11,7 @@ object Constants {
     const val PREFS_LONGITUDE = "LONGITUDE"
     const val PREFS_LOCATION_TIME = "LOCATION_TIME"
     const val UNITS_METRIC = "metric"
-    const val DEGREE_CELSIUS_SYMBOL = " \u2103"
+    const val DEGREE_SYMBOL = "\u00B0"
     const val PERMISSION_ALL = 1
     var PERMISSIONS_LOCATION = arrayOf(
         Manifest.permission.ACCESS_COARSE_LOCATION,

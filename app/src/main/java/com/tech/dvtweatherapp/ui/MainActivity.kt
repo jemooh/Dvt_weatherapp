@@ -82,6 +82,7 @@ class MainActivity : AppCompatActivity() {
         checkIfLocationPermissionIsEnabled(this, sharedPreferences)
         validateAndForceLocationSetting(this)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        fetchRemoteWeather()
     }
 
     override fun onResume() {

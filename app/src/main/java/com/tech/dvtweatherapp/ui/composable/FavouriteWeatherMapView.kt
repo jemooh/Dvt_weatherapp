@@ -46,7 +46,7 @@ fun FavouriteWeatherMapView() {
                             .title(weather.locationName)
                             .snippet(
                                 String.format(
-                                    "%s with temp:%s" + Constants.DEGREE_CELSIUS_SYMBOL,
+                                    "%s with temp:%s" + Constants.DEGREE_SYMBOL,
                                     weather.description,
                                     weather.temp
                                 )

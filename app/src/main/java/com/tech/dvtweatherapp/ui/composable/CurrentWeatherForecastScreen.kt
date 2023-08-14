@@ -16,8 +16,6 @@ import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -26,7 +24,7 @@ import com.tech.dvtweatherapp.data.local.model.FavouriteWeather
 import com.tech.dvtweatherapp.data.local.model.Forecast
 import com.tech.dvtweatherapp.ui.viewmodel.FavouriteWeatherViewModel
 import com.tech.dvtweatherapp.ui.viewmodel.WeatherViewModel
-import com.tech.dvtweatherapp.utils.Constants.DEGREE_CELSIUS_SYMBOL
+import com.tech.dvtweatherapp.utils.Constants.DEGREE_SYMBOL
 import com.tech.dvtweatherapp.utils.Util.Companion.getCurrentDayOfTheWeek
 import com.tech.dvtweatherapp.utils.Util.Companion.getDateLatestUpdated
 import com.tech.dvtweatherapp.utils.Util.Companion.getFavouriteDrawable
@@ -35,7 +33,6 @@ import com.tech.dvtweatherapp.utils.Util.Companion.getWeatherBackgroundDrawable
 import com.tech.dvtweatherapp.utils.Util.Companion.getWeatherIconDrawable
 import java.util.*
 import org.koin.androidx.compose.getViewModel
-import timber.log.Timber
 
 @Preview
 @Composable
@@ -126,7 +123,7 @@ fun CurrentLocationWeather() {
                     textAlign = TextAlign.Center
                 )
                 Text(
-                    text = uiState.weather?.temp.toString() + DEGREE_CELSIUS_SYMBOL,
+                    text = uiState.weather?.temp.toString() + DEGREE_SYMBOL,
                     style = MaterialTheme.typography.h3,
                     modifier = Modifier.padding(16.dp),
                     textAlign = TextAlign.Center
@@ -216,7 +213,7 @@ fun Temp(temp: String, label: String) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = temp + DEGREE_CELSIUS_SYMBOL,
+            text = temp + DEGREE_SYMBOL,
         )
         Text(
             text = label,
@@ -247,7 +244,7 @@ fun ForecastListItems(forecast: Forecast) {
             contentDescription = null,
         )
         Text(
-            forecast.temp.toString() + DEGREE_CELSIUS_SYMBOL,
+            forecast.temp.toString() + DEGREE_SYMBOL,
             modifier = Modifier.align(Alignment.CenterEnd)
         )
     }
