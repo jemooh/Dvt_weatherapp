@@ -7,9 +7,13 @@ import android.location.Location
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.app.ActivityCompat
 import androidx.navigation.compose.rememberNavController
@@ -20,12 +24,10 @@ import com.tech.dvtweatherapp.utils.Util.Companion.validateAndForceLocationSetti
 import com.tech.dvtweatherapp.data.local.datasource.SharedPreferences
 import com.tech.dvtweatherapp.ui.composable.BottomNavigationBar
 import com.tech.dvtweatherapp.ui.composable.Navigation
+import com.tech.dvtweatherapp.ui.composable.NavigationPage
 import com.tech.dvtweatherapp.ui.viewmodel.WeatherViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
-//import org.koin.android.ext.android.inject
-//import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     private val sharedPreferences: SharedPreferences by inject()
@@ -38,14 +40,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     @Composable
     fun MainScreen() {
-        val navController = rememberNavController()
-        Scaffold(
-            bottomBar = { BottomNavigationBar(navController) }
+        Surface(
+            modifier = Modifier.fillMaxSize()
         ) {
-            Navigation(navController = navController)
+            NavigationPage()
         }
     }
 
